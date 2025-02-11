@@ -205,6 +205,16 @@ elif seccion == "Conclusión: Selección del Mejor Modelo":
 
 
 elif seccion == "Modelo XGBoost":
+    # Función para cargar el modelo
+def load_model():
+    try:
+        with gzip.open('model_trained_regressor.pkl.gz', 'rb') as f:
+            model = pickle.load(f)
+        return model
+    except Exception as e:
+        st.error(f"Error al cargar el modelo: {e}")
+        return None
+
     st.subheader("Resultados del modelo XGBoost")
     y_pred_xgb = xgb_model.pkl.gz(X_test)
     acc_xgb = accuracy_score(y_test, y_pred_xgb)
