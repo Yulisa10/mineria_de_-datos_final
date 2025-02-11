@@ -206,7 +206,7 @@ elif seccion == "Conclusión: Selección del Mejor Modelo":
 
 elif seccion == "Modelo XGBoost":
     st.subheader("Resultados del modelo XGBoost")
-    y_pred_xgb = xgb_model.predict(X_test)
+    y_pred_xgb = xgb_model.pkl.gz(X_test)
     acc_xgb = accuracy_score(y_test, y_pred_xgb)
     st.write(f"Exactitud del modelo XGBoost: {acc_xgb:.4f}")
     st.write("Matriz de Confusión:")
