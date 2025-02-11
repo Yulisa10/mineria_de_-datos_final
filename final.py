@@ -213,7 +213,7 @@ elif seccion == "Conclusión: Selección del Mejor Modelo":
             st.error(f"Error al cargar el modelo: {e}")
             return None
             
-    elif seccion == "Modelo XGBoost":
+elif seccion == "Modelo XGBoost":
     st.subheader("Resultados del modelo XGBoost")
     y_pred_xgb = xgb_model.pkl.gz(X_test)
     acc_xgb = accuracy_score(y_test, y_pred_xgb)
